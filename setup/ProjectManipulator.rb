@@ -52,8 +52,9 @@ module Pod
       # group = @project.main_group.find_subpath(@configurator.pod_name, true)
       # group.set_source_tree('SOURCE_ROOT')
       Dir.foreach(file_path) do |file|
-        ref = group.new_reference(file)
-        target.add_file_references([ref])
+        # ref = group.new_reference(file)
+        # target.add_file_references([ref])
+        group.new_file file
       end
     end
 
