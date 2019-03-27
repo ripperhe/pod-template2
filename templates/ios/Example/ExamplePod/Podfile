@@ -2,6 +2,6 @@ use_frameworks!
 
 platform :ios, '8.0'
 
-target '${POD_NAME}_Example' do
+target 'ExamplePod' do
   pod '${POD_NAME}', :path => '../'
 end
