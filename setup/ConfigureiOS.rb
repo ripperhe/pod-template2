@@ -27,7 +27,7 @@ module Pod
       `touch Pod/Classes/ReplaceMe.m`
 
 
-      `mv ./templates/ios/* ./`
+      `mv ./templates/ios/Example/* ./`
 
       # remove podspec for osx
       `rm ./NAME-osx.podspec`

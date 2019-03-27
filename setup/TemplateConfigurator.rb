@@ -70,14 +70,7 @@ module Pod
     def run
       @message_bank.welcome_message
 
-      framework = self.ask_with_answers("What language do you want to use?", ["Swift", "ObjC"]).to_sym
-      case framework
-        when :swift
-          ConfigureSwift.perform(configurator: self)
-
-        when :objc
-          ConfigureIOS.perform(configurator: self)
-      end
+      ConfigureIOS.perform(configurator: self)
 
       replace_variables_in_files
       clean_template_files
@@ -102,11 +95,11 @@ module Pod
       puts "\nRunning " + "pod install".magenta + " on your new library."
       puts ""
 
-      Dir.chdir("Example/ExamplePod") do
+      Dir.chdir("ExamplePod") do
         system "pod install"
       end
 
-      `git add Example/#{pod_name}.xcodeproj/project.pbxproj`
+      `git add .`
       `git commit -m "Initial commit"`
     end
 
