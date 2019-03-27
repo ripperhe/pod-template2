@@ -48,7 +48,7 @@ module Pod
       file_path = "../#{@configurator.pod_name}"
       group = @project.main_group.new_group(@configurator.pod_name, file_path)
       group.set_source_tree('SOURCE_ROOT')
-      # target = @project.targets.first
+      target = @project.targets.first
       # group = @project.main_group.find_subpath(@configurator.pod_name, true)
       # group.set_source_tree('SOURCE_ROOT')
       Dir.foreach(file_path) do |file|
