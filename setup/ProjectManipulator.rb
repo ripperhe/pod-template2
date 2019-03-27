@@ -54,6 +54,7 @@ module Pod
       Dir.foreach(file_path) do |file|
         # ref = group.new_reference(file)
         # target.add_file_references([ref])
+        puts ">>>>>file:#{file}<<<<"
         group.new_file "../#{@configurator.pod_name}/#{file}"
       end
     end
