@@ -13,7 +13,7 @@ module Pod
 
     def perform
 
-      #
+
       Pod::ProjectManipulator.new({
         :configurator => @configurator,
         :xcodeproj_path => "templates/ios/Example/ExampleDevelp/ExampleDevelp.xcodeproj",
