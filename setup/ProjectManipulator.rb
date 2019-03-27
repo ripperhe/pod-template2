@@ -51,8 +51,10 @@ module Pod
       # target = @project.targets.first
       # group = @project.main_group.find_subpath(@configurator.pod_name, true)
       # group.set_source_tree('SOURCE_ROOT')
-      # file_ref = group.new_reference(file_path)
-      # target.add_file_references([file_ref])
+      Dir.foreach(file_path) do |file|
+        ref = group.new_reference(file)
+        target.add_file_references([ref])
+      end
     end
 
     def remove_demo_project
