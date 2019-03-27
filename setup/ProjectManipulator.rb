@@ -49,7 +49,7 @@ module Pod
       group = @project.root_object.main_group.find_subpath(@configurator.pod_name, true)
       group.set_source_tree('SOURCE_ROOT')
       file_ref = group.new_reference(file_path)
-      @project.root_object.add_file_refercens([file_ref])
+      @project.root_object.add_file_references([file_ref])
     end
 
     def remove_demo_project
