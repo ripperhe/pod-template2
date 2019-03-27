@@ -32,8 +32,8 @@ module Pod
       remove_demo_project if @remove_demo_target
       @project.save
 
-      rename_files
-      rename_project_folder
+      # rename_files
+      # rename_project_folder
     end
 
     def add_podspec_metadata
@@ -76,7 +76,7 @@ module Pod
 use_frameworks!
 target '#{test_target.name}' do
   pod '#{@configurator.pod_name}', :path => '../'
-  
+
   ${INCLUDED_PODS}
 end
 RUBY
