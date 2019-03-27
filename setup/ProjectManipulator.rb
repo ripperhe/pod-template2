@@ -25,7 +25,7 @@ module Pod
         "PROJECT" => @configurator.pod_name,
         "CPD" => @prefix
       }
-      replace_internal_project_settings
+      # replace_internal_project_settings
 
       @project = Xcodeproj::Project.open(@xcodeproj_path)
       add_podspec_metadata
