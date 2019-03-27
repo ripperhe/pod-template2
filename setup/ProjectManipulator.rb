@@ -46,11 +46,13 @@ module Pod
 
     def add_files
       file_path = "../#{@configurator.pod_name}"
-      target = @project.targets.first
-      group = @project.main_group.find_subpath(@configurator.pod_name, true)
-      group.set_source_tree('SOURCE_ROOT')
-      file_ref = group.new_reference(file_path)
-      target.add_file_references([file_ref])
+      group = @project.main_group.new_group(@configurator.pod_name, file_path)
+      
+      # target = @project.targets.first
+      # group = @project.main_group.find_subpath(@configurator.pod_name, true)
+      # group.set_source_tree('SOURCE_ROOT')
+      # file_ref = group.new_reference(file_path)
+      # target.add_file_references([file_ref])
     end
 
     def remove_demo_project
