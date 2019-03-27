@@ -29,7 +29,7 @@ module Pod
 
       @project = Xcodeproj::Project.open(@xcodeproj_path)
       add_podspec_metadata
-      add_files
+      # add_files
       remove_demo_project if @remove_demo_target
       @project.save
 
@@ -51,6 +51,7 @@ module Pod
       target = @project.targets.first
       # group = @project.main_group.find_subpath(@configurator.pod_name, true)
       # group.set_source_tree('SOURCE_ROOT')
+      puts ">>>>>path:#{file_path}<<<<"
       Dir.foreach(file_path) do |file|
         # ref = group.new_reference(file)
         # target.add_file_references([ref])
