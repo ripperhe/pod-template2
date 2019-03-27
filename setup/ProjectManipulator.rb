@@ -29,6 +29,7 @@ module Pod
 
       @project = Xcodeproj::Project.open(@xcodeproj_path)
       add_podspec_metadata
+      add_files
       remove_demo_project if @remove_demo_target
       @project.save
 
@@ -41,6 +42,14 @@ module Pod
       project_metadata_item.new_file "../" + @configurator.pod_name  + ".podspec"
       project_metadata_item.new_file "../README.md"
       project_metadata_item.new_file "../LICENSE"
+    end
+
+    def add_files
+      flie_path = "../#{@configurator.pod_name}"
+      group = @project.root_object.main_group.find_subpath(flie_path, false)
+      group.set_source_tree('SOURCE_ROOT')
+      file_ref = group.new_reference(file_path)
+      @project.root_object.add_file_refercens([file_ref])
     end
 
     def remove_demo_project
