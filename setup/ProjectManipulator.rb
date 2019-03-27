@@ -46,7 +46,7 @@ module Pod
 
     def add_files
       flie_path = "../#{@configurator.pod_name}"
-      group = @project.root_object.main_group.find_subpath(@configurator.pod_name, false)
+      group = @project.root_object.main_group.find_subpath(@configurator.pod_name, true)
       group.set_source_tree('SOURCE_ROOT')
       file_ref = group.new_reference(file_path)
       @project.root_object.add_file_refercens([file_ref])
