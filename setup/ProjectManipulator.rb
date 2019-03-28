@@ -47,17 +47,9 @@ module Pod
     def add_files
       file_path = "../#{@configurator.pod_name}"
       group = @project.main_group.new_group(@configurator.pod_name, file_path)
-      # group.set_source_tree('SOURCE_ROOT')
-      target = @project.targets.first
-      # group = @project.main_group.find_subpath(@configurator.pod_name, true)
-      # group.set_source_tree('SOURCE_ROOT')
-      puts ">>>>>path:#{file_path}<<<<"
-      Dir.foreach(file_path) do |file|
-        # ref = group.new_reference(file)
-        # target.add_file_references([ref])
-        puts ">>>>>file:#{file}<<<<"
-        group.new_file "../#{@configurator.pod_name}/#{file}"
-      end
+      classes_group = group.new_group('Classes', file_path + '/Classes')
+      classes_group.new_reference(file_path + '/Classes' + 'ReplaceMe.m')
+      assets_group = group.new_group('Assets', file_path + '/Assets')
     end
 
     def remove_demo_project
