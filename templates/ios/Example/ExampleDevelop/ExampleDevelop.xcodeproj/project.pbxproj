@@ -39,10 +39,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C9280BB9224C70B20086D33B /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		C94B48DD224B650D00F14116 = {
 			isa = PBXGroup;
 			children = (
 				C9E5B5BF224B6D7B004815C1 /* Podspec Metadata */,
+				C9280BB9224C70B20086D33B /* Pod */,
 				C94B48E8224B650D00F14116 /* ExampleDevelop */,
 				C94B48E7224B650D00F14116 /* Products */,
 			);
