@@ -48,7 +48,9 @@ module Pod
       file_path = "../#{@configurator.pod_name}"
       group = @project.main_group.new_group(@configurator.pod_name, file_path)
       classes_group = group.new_group('Classes', file_path + '/Classes')
-      classes_group.new_reference('ReplaceMe.m')
+      file_ref = classes_group.new_reference('ReplaceMe.m')
+      target = project.targets.first
+      target.add_file_references([file_ref])
       assets_group = group.new_group('Assets', file_path + '/Assets')
     end
 
