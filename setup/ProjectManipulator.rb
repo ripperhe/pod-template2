@@ -50,7 +50,6 @@ module Pod
       classes_group = group.new_group('Classes', file_path + '/Classes')
       classes_group.new_reference('ReplaceMe.m')
       assets_group = group.new_group('Assets', file_path + '/Assets')
-      group.sort(1)
     end
 
     def remove_demo_project
