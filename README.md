@@ -1,26 +1,25 @@
-pod-template
-============
+# pod-template2
 
-An opinionated template for creating a Pod with the following features:
+方便创建 pod 组件，粗陋版本，后续更新
 
-- Git as the source control management system
-- Clean folder structure
-- Project generation
-- MIT license
-- Testing as a standard
-- Turnkey access to Travis CI
-- Also supports Carthage
+## 包含文件
 
-## Getting started
+* .gitignore
+* README.md
+* LICENSE
+* xxx.podspec
+* fastlne/Fastfile
+* ExampleDevelop
+* ExamplePod
 
-There are two reasons for wanting to work on this template, making your own or improving the one for everyone's. In both cases you will want to work with the ruby classes inside the `setup` folder, and the example base template that it works on from inside `template/ios/`. 
+## 使用
 
-## Best practices
+```bash
+$ pod lib create 组件名字 --template-url=https://github.com/ripperhe/pod-template2
+```
 
-The command `pod lib create` aims to be ran along with this guide: https://guides.cocoapods.org/making/using-pod-lib-create.html so any changes of flow should be updated there also.
+## 参考
 
-It is open to communal input, but adding new features, or new ideas are probably better off being discussed in an issue first. In general we try to think if an average Xcode user is going to use this feature or not, if it's unlikely is it a _very strongly_ encouraged best practice ( ala testing / CI. ) If it's something useful for saving a few minutes every deploy, or isn't easily documented in the guide it is likely to be denied in order to keep this project as simple as possible.
-
-## Requirements:
-
-- CocoaPods 1.0.0+
+* <https://github.com/CocoaPods/Xcodeproj>
+* <https://github.com/venmo/synx>
+* <https://draveness.me/bei-xcodeproj-keng-de-zhe-ji-tian>
